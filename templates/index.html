@@ -27,9 +27,24 @@
 <br>
 
 <div>
-    {% if bmi %}
+  {% if bmi %}
      <p>Your BMI is: {{ bmi }}</p>
-     {% endif %}
+     <p>Your Category: {{bmi_category}}</p>
+    
+     {% if bmi_category == 'Under weight' %}
+            <p>You are underweight. It's time to start working out and gaining some weight!.</p>
+     
+      {% elif bmi_category == 'Healthy weight' %}
+            <p>Congratulations! You are maintaining a healthy weight. Keep it up!</p>
+      
+      {% elif bmi_category == 'Over weight' %}
+         <p>You are overweight. It's time to start working out and getting healthy!</p>
+      
+      {% elif bmi_category == 'Obesity' %}
+         <p>You are obesity. It's crucial to prioritize your health and consider consulting with a healthcare professional for guidance on weight management strategies.</p>
+     
+     {% endif %} 
+  {% endif %}
 </div>
 
 
